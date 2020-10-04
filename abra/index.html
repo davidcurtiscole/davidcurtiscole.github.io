@@ -25,7 +25,7 @@
 			width: 500px;
 		}
 
-		.p1 {
+		.p1 .p2 {
 			padding-top: 15px;
 		}
 	</style>
@@ -89,22 +89,22 @@
 
 <p>Click <button onclick="prob2()">button</button> and in the prompt, put what you want to change the number to in the second field on all the sets.</p>
 
-<div class="p1">
+<div class="p2">
 	<p>Set 1</p>
 	<input type="text" id="buyer0" value="buyer0"><br>
 	<input type="text" id="seller0" value="2"><br>
 </div>
-<div class="p1">
+<div class="p2">
 	<p>Set 2</p>
 	<input type="text" id="buyer1" value="buyer1"><br>
 	<input type="text" id="seller1" value="2"><br>
 </div>
-<div class="p1">
+<div class="p2">
 	<p>Set 3</p>
 	<input type="text" id="buyer2" value="buyer2"><br>
 	<input type="text" id="seller2" value="2"><br>
 </div>
-<div class="p1">
+<div class="p2">
 	<p>Set 4</p>
 	<input type="text" id="buyer3" value="buyer3"><br>
 	<input type="text" id="seller3" value="2"><br>
@@ -154,7 +154,6 @@
 			document.getElementById("thisisthesame"+i).value=document.getElementById("thisisthesame0").value;
 		}
 	}
-
 
 
 	function prob2() {
