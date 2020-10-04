@@ -2,72 +2,120 @@
 <html>
 <head>
 	<title>What Abracadavid was used for</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 	<style type="text/css">
 		td {
 			border: 2px solid black;
 			padding: 2px;
 			width: 200px;
 		}
+		body {
+			padding-top: 20px;
+			padding-left: 20px;
+			padding-right: 20px;
+			padding-bottom: 50px;
+		}
+
+		hr {
+			border-top: 5px solid black;
+		}
+		
+
+		.p1field {
+			width: 500px;
+		}
+
+		.p1 {
+			padding-top: 15px;
+		}
 	</style>
+
+
 </head>
 <body>
 
+<h2 class="alert alert-primary">Chrome extension working examples</h2>
+
 <!-- problem 1 -->
+<div>
+	<p><strong>Problem 1</strong>: Info from a Google Sheet needed to be pasted into a CMS form, but needed to be split by cell into the first field of the different sets. Also, the second text field in every set needed to match the value of the second text field in the first set.</p>
 
-<p>Problem 1: Info from a Google Sheet needed to be pasted into a form, but needed to be split by cell into the different fields. The sheet needed to be modified a little bit by adding a not used character (the ? in this case) to split the rows.</p>
+	<p>Copy the cells from the table below, click this <button onclick="prob1()">button</button> and paste what you copied into the prompt.</p>
 
-<p>Copy info table below and click <button onclick="prob1()">button</button> and paste in prompt to fill in form quickly.</p>
+	<table>
+		<th>Table1</th>
+		<tr>
+			<td>Info1</td>
+		</tr>
+		<tr>
+			<td>Info2</td>
+		</tr>
+		<tr>
+			<td>Info3</td>
+		</tr>
+		<tr>
+			<td>Info4</td>
+		</tr>
+	</table>
 
-<table>
-	<tr>
-		<td>Info1</td>
-	</tr>
-	<tr>
-		<td>?Info2</td>
-	</tr>
-	<tr>
-		<td>?Info3</td>
-	</tr>
-	<tr>
-		<td>?Info4</td>
-	</tr>
-</table>
-
-<br>
-
-<input type="text" id="thisis0" value="The value"><br>
-<input type="text" id="thisis1" value="of this text"><br>
-<input type="text" id="thisis2" value="will change"><br>
-<input type="text" id="thisis3" value="to the above"><br>
+	<br>
+	<div class="p1">
+		<p>Set 1</p>
+		<input type="text" class="p1field" id="thisis0" value="The value"><br>
+		<input type="text" class="p1field" id="thisisthesame0" value="Subvalue should be the same"><br>
+	</div>
+	<div class="p1">
+		<p>Set 2</p>
+		<input type="text" class="p1field" id="thisis1" value="of this text"><br>
+		<input type="text" class="p1field" id="thisisthesame1" value=""><br>		
+	</div>
+	<div class="p1">
+		<p>Set 3</p>
+		<input type="text" class="p1field" id="thisis2" value="will change"><br>
+		<input type="text" class="p1field" id="thisisthesame2" value=""><br>		
+	</div>
+	<div class="p1">
+		<p>Set 4</p>
+		<input type="text" class="p1field" id="thisis3" value="to the above"><br>
+		<input type="text" class="p1field" id="thisisthesame3" value=""><br>	
+	</div>
+</div>
 
 <hr>
 
 <!-- problem 2 -->
 
-<p>Problem 2: Info in a field needed to be changed across the board. Search and Replace extension not possible as other fields could mistakenly be updated.</p>
+<p><strong>Problem 2</strong>: The value in a field needed to be changed on all the sets. Chrome doesn't have a native find and replace function and the existing <em>Search and Replace</em> extension for Chrome should not be used as other fields that have the same value in it could mistakenly be updated.</p>
 
-<p>Click <button onclick="prob2()">button</button> and put what you want to change the number to.</p>
+<p>Click <button onclick="prob2()">button</button> and in the prompt, put what you want to change the number to in the second field on all the sets.</p>
 
-<p class="p2">Set 1</p>
-<input type="text" id="buyer0" value="buyer0"><br>
-<input type="text" id="seller0" value="2"><br>
-<p class="p2">Set 2</p>
-<input type="text" id="buyer1" value="buyer1"><br>
-<input type="text" id="seller1" value="2"><br>
-<p class="p2">Set 3</p>
-<input type="text" id="buyer2" value="buyer2"><br>
-<input type="text" id="seller2" value="2"><br>
-<p class="p2">Set 4</p>
-<input type="text" id="buyer3" value="buyer3"><br>
-<input type="text" id="seller3" value="2"><br>
-
+<div class="p1">
+	<p>Set 1</p>
+	<input type="text" id="buyer0" value="buyer0"><br>
+	<input type="text" id="seller0" value="2"><br>
+</div>
+<div class="p1">
+	<p>Set 2</p>
+	<input type="text" id="buyer1" value="buyer1"><br>
+	<input type="text" id="seller1" value="2"><br>
+</div>
+<div class="p1">
+	<p>Set 3</p>
+	<input type="text" id="buyer2" value="buyer2"><br>
+	<input type="text" id="seller2" value="2"><br>
+</div>
+<div class="p1">
+	<p>Set 4</p>
+	<input type="text" id="buyer3" value="buyer3"><br>
+	<input type="text" id="seller3" value="2"><br>
+</div>
 <hr>
 
 <!-- problem 3 -->
 
-<p>Problem 3: there were several semi-similiar named options in a drop down and one needed to be quickly found.</p>
+<p><strong>Problem 3</strong>: There were several semi-similiar named options in a drop down and one needed to be quickly found, but the user only has access to the unique part of the option name.</p>
 
-<p>Copy g016 and click <button onclick="prob3()">button</button> and paste in prompt to locate option quickly.</p>
+<p>Copy <strong>g016</strong> and click the <button onclick="prob3()">button</button> and paste in prompt to locate option quickly.</p>
 
 <select id="prob3">
 	<option>abc01b016</option>
@@ -96,11 +144,14 @@
 	function prob1() {
 		var toursVT2 = window.prompt('enter what you copied');
 		var str = toursVT2;
-		var amount = str.split('?').length;
-		var tourSplit = toursVT2.split("?");
+		var amount = str.split('\n').length;
+		var tourSplit = toursVT2.split("\n");
 
-		for (i=0; i < amount; i++) { 
+		for (var i=0; i < amount; i++) { 
 			document.getElementById("thisis"+i).value=tourSplit[i];
+		}
+		for (var i=1; i < amount; i++) { 
+			document.getElementById("thisisthesame"+i).value=document.getElementById("thisisthesame0").value;
 		}
 	}
 
