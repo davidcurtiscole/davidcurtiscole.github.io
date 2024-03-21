@@ -2,7 +2,7 @@ var flexOnly = window.prompt('enter what you copied');
 var str = flexOnly;
 var amount = str.split('\n').length;
 var flexSplit = flexOnly.split("\n");
-console.log(amount.length);
+console.log(amount);
 
 for (var i = 0; i < amount; i++) {
 
